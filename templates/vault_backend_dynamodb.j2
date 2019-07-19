@@ -1,0 +1,32 @@
+backend "dynamodb" {
+    {% if vault_dynamodb | bool -%}
+    endpoint = "{{ vault_dynamodb }}"
+    {% endif -%}
+    {% if vault_dynamodb_table | bool -%}
+    table = "{{ vault_dynamodb_table }}"
+    {% endif }
+    {% if vault_dynamodb_ha_enabled | bool -%}
+    ha_enabled = "{{ vault_dynamodb_ha_enabled }}"
+    {% endif -%}
+    {% if vault_dynamodb_max_parallel | bool -%}
+    max_parallel = "{{ vault_dynamodb_max_parallel }}"
+    {% endif -%}
+    {% if vault_dynamodb_region | bool -%}
+    region = "{{ vault_dynamodb_region }}"
+    {% endif -%}
+    {% if vault_dynamodb_read_capacity | bool -%}
+    read_capacity = {{ vault_dynamodb_read_capacity }}
+    {% endif -%}
+    {% if vault_dynamodb_write_capacity | bool -%}
+    write_capacity = {{ vault_dynamodb_write_capacity }}
+    {% endif -%}
+    {% if vault_dynamodb_access_key | bool -%}
+    access_key = "{{ vault_dynamodb_access_key }}"
+    {% endif -%}
+    {% if vault_dynamodb_secret_key | bool -%}
+    secret_key = "{{ vault_dynamodb_secret_key }}"
+    {% endif -%}
+    {% if vault_dynamodb_session_token | bool -%}
+    session_token = "{{ vault_dynamodb_session_token }}"
+    {% endif }
+}
