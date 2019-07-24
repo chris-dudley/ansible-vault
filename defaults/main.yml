@@ -66,6 +66,7 @@ vault_backend: consul
 vault_backend_consul: vault_backend_consul.j2
 vault_backend_file: vault_backend_file.j2
 vault_backend_etcd: vault_backend_etcd.j2
+vault_backend_dynamodb: vault_backend_dynamodb.j2
 
 vault_cluster_disable: false
 vault_cluster_address: "{{ hostvars[inventory_hostname]['ansible_'+vault_iface]['ipv4']['address'] }}:{{ (vault_port | int) + 1}}"
